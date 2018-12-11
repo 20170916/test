@@ -8,7 +8,8 @@ public class SwapSort {
     static int [] arr={3,1,5,8,2,9,6,7,4,0};
 
     /**
-     * 利用亦或操作交换数组中的连个数据。<p>
+     * 利用亦或操作交换数组中的两个个数据。<p>
+     *     原理：a^(a^b)等于b；
      */
     public void swap(int[] arr,int i,int j){
         arr[i]^=arr[j];
