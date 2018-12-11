@@ -55,13 +55,13 @@ public class InsertSort {
                 int m =(low+high)/2;
                 if(insertData<arr[m]){
                     high=m-1;
-                }else{
+                }
+                if(insertData>=arr[m]){
                     low=m+1;
                 }
             }
-            //剩两个数时，如果insertData<arr[m]，此时high+1等于low；否则high等于low；所以low执行插入点
-            //剩1个数时，如果insertData<arr[m]，low都指向插入点
-            //所以，low在结束时会指向插入点（插入点及其以后的数据都将后移一位）
+            //结束的时候，insertDate一定是大于等于arr[high]，小于等于arr[low]的数，high+1与low相等；
+            //所以插入点一定是low指定的索引位置
             while(j>=low){
                 arr[j+1]=arr[j--];
             }
