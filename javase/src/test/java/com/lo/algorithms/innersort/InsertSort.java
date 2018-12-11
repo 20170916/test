@@ -19,7 +19,7 @@ public class InsertSort {
      * 数量小时效率高，数量多时效率低。
      * @param arr
      */
-    private static void straightInsertSort(int [] arr){
+    private void straightInsertSort(int [] arr){
         //i代表无序区即将插入到有序区的首元素所在的索引
         for(int i=1;i<arr.length;i++){
             int insertData=arr[i];
@@ -45,7 +45,7 @@ public class InsertSort {
      * 插入时，利用折半查找确定插入位置。
      * @param arr
      */
-    public static void binaryInsertSort(int[] arr){
+    public void binaryInsertSort(int[] arr){
         for(int i=1;i<arr.length;i++){
             int insertData=arr[i];
             int j=i-1;
@@ -73,6 +73,32 @@ public class InsertSort {
     public void testBinaryInsertSort(){
         System.out.println(Arrays.toString(arr));
         binaryInsertSort(arr);
+        System.out.println(Arrays.toString(arr));
+    }
+
+
+    public void shellSort(int[] arr){
+        //设定步长
+        for(int step=arr.length/2;step>=1;step/=2){
+            //i是无序区的起点，每一趟将i插入到有序区的合适位置。
+            for(int i=step;i<arr.length;i++){
+                //j从有序区尾部开始，按照指定的步长向前遍历有序区，寻找插入点
+                int j=i-step;
+                //insertData是无序区待插入的数据
+                int insertData=arr[i];
+                while(j>=0&&insertData<arr[j]){
+                    arr[j+step]=arr[j];
+                    j-=step;
+                }
+                arr[j+step]=insertData;
+            }
+        }
+    }
+
+    @Test
+    public void testShellSort(){
+        System.out.println(Arrays.toString(arr));
+        shellSort(arr);
         System.out.println(Arrays.toString(arr));
     }
 
