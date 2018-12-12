@@ -66,4 +66,57 @@ public class SwapSort {
         optimizeBubbleSort(arr);
         System.out.println(Arrays.toString(arr));
     }
+
+
+    public void quickSort(int[] a){
+        quickSort(a,0,a.length-1);
+    }
+    /**
+     *快排。<p>
+     *这是一个递归方法，递归的条件是s<e。<br>
+     * @param a 待排序的数组。
+     * @param s 待排序序列的首部索引。
+     * @param e 待排序序列的尾部索引。
+     */
+    private void quickSort(int[]a,int s,int e){
+        //当带排序序列个数大于等于2个的时候才会排序;
+        if(s<e){
+            //i、j两个指针分别从待排序序列首位同步相向遍历，
+            //遍历过程中，两个指针一直处于相异的状态，
+            // 即：一个指针处于枢轴位置，另一个指针的值与枢轴的值进行比较来决定向前移动指针还是交换指针的状态。
+            int i=s;
+            int j=e;
+            //这里每一趟取带排序的首个元素为枢轴，枢轴只是一个值，枢轴也可以不是第一个元素（记得jdk中是取首中尾三个元素中间的那个作为枢轴）。
+            int pivot=a[s];
+            //只要i<j就要继续往下判断；
+            while(i<j){
+                while(i<j&&a[j]>=pivot){
+                    j--;
+                }
+                if(i<j){
+                    a[i++]=a[j];
+                }
+
+                while(i<j&&a[i]<=pivot){
+                    i++;
+                }
+                if(i<j){
+                    a[j--]=a[i];
+                }
+            }
+            //i==j时结束
+            a[i]=pivot;
+            quickSort(a,s,i-1);
+            quickSort(a,i+1,e);
+        }
+    }
+
+    @Test
+    public void testQuickSort(){
+        System.out.println(Arrays.toString(arr));
+        quickSort(arr);
+        System.out.println(Arrays.toString(arr));
+    }
+
+    
 }
