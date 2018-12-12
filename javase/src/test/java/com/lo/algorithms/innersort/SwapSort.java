@@ -118,5 +118,5 @@ public class SwapSort {
         System.out.println(Arrays.toString(arr));
     }
 
-    
+
 }
