@@ -50,4 +50,55 @@ public class SelectSort {
     }
 
 
+
+    public void heapSort(int[] a){
+        //创建大顶堆，堆化非叶节点；i表示非叶节点索引变化：a.length-a----->0
+        //大顶堆是一个满二叉树，满二叉树序号可与全二叉树一一对应的二叉树(全二叉树所有节点都两个子节点)
+        for(int i=(a.length-1)/2;i>=0;i--){
+            sift(a,i,a.length-1);
+        }
+        //交换根梢（堆顶与无序区尾部交换），对根进行堆化。当剩下最后两个数据时，不进行堆化，直接比较大小
+        for(int i=a.length-1;i>=2;i--){
+            swap(a,0,i);
+            sift(a,0,i-1);
+        }
+        swap(a,0,1);
+    }
+
+    /**堆化
+     *
+     * @param a
+     * @param i 待堆化的堆顶索引。<br>
+     * @param n 待堆化的堆尾索引。<br>
+     */
+    public static void sift(int[] a,int i,int n){
+        //i与左右孩子最值比较，若i节点小，与最值孩子交换；i节点继续与新孩子比较，直到i节点比新孩子最值大或称为叶节点没有孩子为止。
+        int temp=a[i];
+        //j索引代表孩子节点的索引
+        for(int j=i*2+1;j<=n;j=j*2+1){
+            //比较两个孩子谁的比较大,j索引指向较大的
+            if(j+1<=n&&a[j+1]>a[j]){
+                j++;
+            }
+            //待堆化的堆顶比最值孩子还大的话，就不用堆化了，直接退出
+            if(temp>=a[j]){
+                break;
+            }
+            //待堆化的堆顶比最值孩子小的话，则堆顶值被最值孩子的值替换，堆顶指向最值孩子位置，进行下一步比较
+            a[i]=a[j];
+            i=j;
+        }
+        //原堆顶值赋值到i节点最后指向的位置
+        a[i]=temp;
+
+    }
+
+    @Test
+    public void testHeapSort(){
+        System.out.println(Arrays.toString(arr));
+        heapSort(arr);
+        System.out.println(Arrays.toString(arr));
+    }
+
+
 }
