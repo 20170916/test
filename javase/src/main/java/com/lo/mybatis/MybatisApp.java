@@ -1,6 +1,7 @@
 package com.lo.mybatis;
 
-import com.lo.mybatis.dao.UserDao;
+import com.lo.dao.UserDao;
+import com.lo.pojo.User;
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
@@ -10,6 +11,8 @@ import org.slf4j.LoggerFactory;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.List;
+import java.util.Map;
 
 public class MybatisApp {
     private static Logger logger=LoggerFactory.getLogger(MybatisApp.class);
@@ -19,11 +22,14 @@ public class MybatisApp {
         SqlSession sqlSession = sqlSessionFactory.openSession();
         sqlSession.getConfiguration().addMapper(UserDao.class);
         //多次查询，多个结果，但只有一个sql语句（一级缓存）
-        System.out.println(sqlSession.getMapper(UserDao.class).findAll());
+        List<User> list = sqlSession.getMapper(UserDao.class).findAll();
+        final User user = list.get(0);
+        System.out.println(user);
+        System.out.println(list);
         sqlSession.clearCache();//关闭一级缓存
-        System.out.println(sqlSession.getMapper(UserDao.class).findAll());
-        System.out.println(sqlSession.getMapper(UserDao.class).findAll());
-        System.out.println(sqlSession.getMapper(UserDao.class).findAll());
+        System.out.println(list);
+        System.out.println(list);
+        System.out.println(list);
         //logger.info("1");
     }
 }

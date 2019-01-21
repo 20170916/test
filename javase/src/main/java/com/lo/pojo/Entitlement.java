@@ -1,4 +1,4 @@
-package com.lo.spring.pojo;
+package com.lo.pojo;
 
 public class Entitlement {
     private String name;
