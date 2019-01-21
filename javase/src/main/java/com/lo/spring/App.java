@@ -9,7 +9,7 @@ import org.springframework.context.annotation.EnableAspectJAutoProxy;
 import java.util.List;
 import java.util.Map;
 
-@EnableAspectJAutoProxy
+//@EnableAspectJAutoProxy
 public class App {
     public static void main(String[] args) {
         AnnotationConfigApplicationContext ctx=new AnnotationConfigApplicationContext(AppConfig.class);
