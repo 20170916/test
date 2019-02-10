@@ -16,10 +16,10 @@ public class TestBeanFactoryPostProcessor {
 
 
         Object userServiceImpl = acac.getBean("userServiceImpl");
-        System.out.println("get bean by name:"+userServiceImpl);
+        System.out.println("-- get bean by name:"+userServiceImpl);
 
         Object bean = acac.getBean(UserServiceImplAnother.class);
-        System.out.println("get bean by class:"+bean);
+        System.out.println("-- get bean by class:"+bean);
         /*Object userServiceImpl2 = acac.getBean("&userServiceImpl");
         System.out.println("get bean by &{name}:"+userServiceImpl2);*/
     }

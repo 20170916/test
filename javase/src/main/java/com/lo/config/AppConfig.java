@@ -1,6 +1,7 @@
 package com.lo.config;
 
 import com.lo.pojo.Entitlement;
+import com.lo.service.UserServiceImpl;
 import org.mybatis.spring.SqlSessionFactoryBean;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.beans.factory.annotation.Value;
@@ -61,4 +62,5 @@ public class AppConfig {
         sqlSessionFactoryBean.setDataSource(dataSource);
         return  sqlSessionFactoryBean;
     }
+
 }

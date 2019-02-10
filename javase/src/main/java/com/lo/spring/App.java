@@ -1,6 +1,7 @@
 package com.lo.spring;
 
 import com.lo.pojo.User;
+import com.lo.service.UserService;
 import com.lo.service.UserServiceImpl;
 import com.lo.config.AppConfig;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
@@ -26,16 +27,18 @@ public class App {
 //        TestServiceImpl testService = ctx.getBean(TestServiceImpl.class);
 //        System.out.println(testService);
 //        ctx.close();
-        /*UserServiceImpl bean = ctx.getBean(UserServiceImpl.class);
+        System.out.println(ctx.getBean("userServiceImpl"));
+        UserServiceImpl bean = ctx.getBean(UserServiceImpl.class);
         final List<User> query = bean.query();
         System.out.println(query);
         final List<User> query2 = bean.query();
-        System.out.println(query2);*/
+        System.out.println(query2);
         //会打印多条sql语句，因为Spring把mybatis的一级缓存关掉了
+
+        System.out.println(ctx.getBean(UserService.class).query());
+        /*System.out.println(ctx.getBean(UserServiceImpl.class).query());
         System.out.println(ctx.getBean(UserServiceImpl.class).query());
-        System.out.println(ctx.getBean(UserServiceImpl.class).query());
-        System.out.println(ctx.getBean(UserServiceImpl.class).query());
-        System.out.println(ctx.getBean(UserServiceImpl.class).query());
+        System.out.println(ctx.getBean(UserServiceImpl.class).query());*/
         //System.out.println(.query());
 
     }

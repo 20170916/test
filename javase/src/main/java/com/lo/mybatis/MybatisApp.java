@@ -21,7 +21,7 @@ public class MybatisApp {
         SqlSessionFactory sqlSessionFactory = new SqlSessionFactoryBuilder().build(stream);
         SqlSession sqlSession = sqlSessionFactory.openSession();
         sqlSession.getConfiguration().addMapper(UserDao.class);
-        //多次查询，多个结果，但只有一个sql语句（一级缓存）
+        //多次查询，多个结果，但只有一个sql语句（mybatis默认打开了一级缓存）
         List<User> list = sqlSession.getMapper(UserDao.class).findAll();
         final User user = list.get(0);
         System.out.println(user);
