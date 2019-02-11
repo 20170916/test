@@ -8,10 +8,6 @@ import org.springframework.beans.factory.support.BeanDefinitionRegistry;
 import org.springframework.context.annotation.ImportBeanDefinitionRegistrar;
 import org.springframework.core.type.AnnotationMetadata;
 
-import java.lang.reflect.InvocationHandler;
-import java.lang.reflect.Method;
-import java.lang.reflect.Proxy;
-
 public class MyImportBeanDefinitionRegistrar implements ImportBeanDefinitionRegistrar {
     @Override
     public void registerBeanDefinitions(AnnotationMetadata importingClassMetadata, BeanDefinitionRegistry registry) {
@@ -32,7 +28,7 @@ public class MyImportBeanDefinitionRegistrar implements ImportBeanDefinitionRegi
 
         //获取bd，Spring中是通过scan扫描后将类转成bd的
         //这里手动获取bd
-        final BeanDefinitionBuilder beanDefinitionBuilder = BeanDefinitionBuilder.genericBeanDefinition(MyFactoryBean.class);
+        final BeanDefinitionBuilder beanDefinitionBuilder = BeanDefinitionBuilder.genericBeanDefinition(MyUserDaoFactoryBean.class);
         AbstractBeanDefinition beanDefinition = beanDefinitionBuilder.getBeanDefinition();
 
         registry.registerBeanDefinition("registerUserDao",beanDefinition);
@@ -41,12 +37,4 @@ public class MyImportBeanDefinitionRegistrar implements ImportBeanDefinitionRegi
 
     }
 
-    public static class UserDaoInvocationHandler implements InvocationHandler{
-
-        @Override
-        public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
-            System.out.println("user dao sql");
-            return null;
-        }
-    }
 }
