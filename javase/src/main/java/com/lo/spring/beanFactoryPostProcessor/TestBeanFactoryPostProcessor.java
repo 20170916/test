@@ -15,7 +15,7 @@ public class TestBeanFactoryPostProcessor {
         AnnotationConfigApplicationContext acac=new AnnotationConfigApplicationContext(AppConfig.class);
 
 
-        Object userServiceImpl = acac.getBean("userServiceImpl");
+        Object userServiceImpl = acac.getBean("user2ServiceImpl");
         System.out.println("-- get bean by name:"+userServiceImpl);
 
         Object bean = acac.getBean(UserServiceImplAnother.class);

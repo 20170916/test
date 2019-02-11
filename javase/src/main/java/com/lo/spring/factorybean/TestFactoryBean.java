@@ -16,8 +16,11 @@ public class TestFactoryBean {
     public static void main(String[] args) {
         AnnotationConfigApplicationContext acac=new AnnotationConfigApplicationContext(AppConfig.class);
 
-        MyFactoryBean bean = acac.getBean(MyFactoryBean.class);
+        MySpringBean bean = acac.getBean(MySpringBean.class);
         System.out.println("get bean by class:"+bean);
+
+        final MyFactoryBean bean1 = acac.getBean(MyFactoryBean.class);
+        System.out.println("get bean by FactoryBean class:"+bean1);
 
         Object myFactoryBean = acac.getBean("myFactoryBean");
         System.out.println("get bean by name:"+myFactoryBean);
