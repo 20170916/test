@@ -182,6 +182,11 @@
             <version>1.2.58</version>
         </dependency>
 
+        <dependency>
+            <groupId>org.apache.shardingsphere</groupId>
+            <artifactId>sharding-jdbc-core</artifactId>
+            <version>4.0.0-RC2</version>
+        </dependency>
 
     </dependencies>
 

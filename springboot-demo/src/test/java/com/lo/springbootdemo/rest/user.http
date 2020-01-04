@@ -1,0 +1,23 @@
+### get
+GET {{baseUrl}}/getPort
+Accept: */*
+Cache-Control: no-cache
+
+### post
+POST {{baseUrl}}/post
+Content-Type: application/json
+
+{
+  "bodyParam":"test"
+}
+
+### postWithUrlParam
+POST {{baseUrl}}/postWithUrlParam?param=url
+Content-Type: application/json
+
+{
+  "bodyParam":"test"
+}
+
+###
+
