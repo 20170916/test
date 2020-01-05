@@ -207,8 +207,8 @@ public class HttpClientUtil {
      * @return
      */
     public static String doPost(String url, Map<String, String> headerMap, String entityStr, String charset) {
-        CloseableHttpClient closeableHttpClient = HttpClientBuilder.create().build();
-        //CloseableHttpClient closeableHttpClient =getCloseableHttpClient();
+        //CloseableHttpClient closeableHttpClient = HttpClientBuilder.create().build();
+        CloseableHttpClient closeableHttpClient =getCloseableHttpClient();
         logger.info(String.format("http post return String,the url is: %s,entiry:%s" , url,""));
         // 获取一个HttpPost对象
         HttpPost httpPost = new HttpPost(url);

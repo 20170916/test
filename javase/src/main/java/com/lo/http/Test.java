@@ -14,6 +14,15 @@ import lombok.extern.slf4j.Slf4j;
  * 并且自己sprintboot接口不关闭response，或者使用默认的httpClient也多不会超时。
  * 周一回公司试一下设置header，不行再用get请求，实在不行可能是tsdb设置了并发量？
  */
+
+/**
+ * 草他妈，果然是tsdb并发量问题。
+ * 刚把sprintboot tocat的并发量调了一下，server.tomcat.max-threads:1,server.tomcat.max-connections:2
+ * 折磨我两天的的"java.net.SocketTimeoutException:Read time out复现了。
+ * 而且get请求也会有这种问题。
+ * 刚看了opentsdb的官方文档，发现默认使用异步io，2个线程。
+ * fuck opentsdb。
+ */
 @Slf4j
 public class Test {
 
@@ -23,9 +32,9 @@ public class Test {
     public void test() throws InterruptedException {
         long start = System.currentTimeMillis();
         log.info("---------###  start {}", start);
-        for(int i=0;i<100;i++){
+        for(int i=0;i<1000;i++){
             int finalI = i;
-            this.invoke(true,true, i);
+            this.invoke(false,true, i);
             //Thread.sleep(1000);
         }
         long end = System.currentTimeMillis();
@@ -36,13 +45,15 @@ public class Test {
 
 
     private void doGet(){
-        String putUrl = "http://www.baidu.com";
+        String putUrl = "http://localhost:8080/getPort";
         //String opentsdbDataPointListJsonString = JSONArray.toJSONString(opentsdbQuery);
         String ret = HttpClientUtil.doGet(putUrl,null, "utf-8");
         //String ret = HttpClientUtil.doPostWithJson(putUrl,  postString, null);
-        System.out.println(ret);
+        //System.out.println(ret);
+        log.info("ret:{}",ret);
     }
     private void doPost(){
+
         String putUrl = "http://localhost:8080/post";
         final MyRequestBody myRequestBody = new MyRequestBody();myRequestBody.bodyParam="test";
         String myRequestBodyListJsonString = JSONArray.toJSONString(myRequestBody);
