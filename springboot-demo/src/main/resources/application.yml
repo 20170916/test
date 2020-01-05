@@ -2,6 +2,9 @@ server:
   port: 8080
   servlet:
       context-path: /lo
+  tomcat:
+    max-threads: 1
+    max-connections: 2
 
 spring:
     datasource:
