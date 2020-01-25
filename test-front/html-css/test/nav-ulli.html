@@ -7,25 +7,43 @@
 		*{
 			margin: 0;
 			padding: 0;
+			color:#424242;
 		}
+
 		ul{
-			list-style: none;//去掉行首标记
+			list-style: none;/**去掉行首标记*/
 		}
 		li{
 			margin: 0 10px;
 			float: left;/*li横向排列*/
+			height: 30px;
+			line-height: 30px;
+
+
+		}
+		a{
+
+			text-decoration: none;/*去掉超链接下划线*/
 			color: #f40;
 			font-weight: bold; /* 加粗 */
 			font-size: 14px;/* 字体大小*/
-			height: 25px;
-			line-height: 25px;
 			padding: 0 5px;
+			height: 30px;
+			display: inline-block;
 		}
 		/* 鼠标悬停时，背景颜色与字体颜色互换 */
-		li:hover{
+		a:hover{
 			background-color: #f40;
 			color: #fff;
 			border-radius: 15px;/*圆角矩形*/
+		}
+		/**
+		清除浮动流
+		 */
+		ul::after{
+			content:"";
+			display: block;
+			clear:both;
 		}
 	</style>
 </head>
@@ -62,11 +80,18 @@
 		<li>AR</li>
 	</ol> -->
 	
-	<ul>
-		<li>淘宝</li>
-		<li>天猫</li>
-		<li>聚划算</li>
+	<ul >
+		<li>
+			<a href="#">淘宝</a>
+		</li>
+		<li>
+			<a href="#">天猫</a>
+		</li>
+		<li>
+			<a href="#">聚划算</a>
+		</li>
 	</ul>
+	<div>123</div>
 
 
 </body>
