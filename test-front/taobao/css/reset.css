@@ -1,0 +1,86 @@
+/**
+用来做样式重置，将不需要的或对新项目有影响的样式重新设置
+ */
+
+body, p, h1, h2, h3, h4 {
+    margin: 0;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+/*
+img 标签的边框在ie浏览器中会被展示出来，所以讲border重置为none.
+
+ */
+img {
+    border: none;
+    vertical-align: middle;/*解决img在div底部有空白问题*/
+}
+
+a {
+    text-decoration: none;/*去掉a标签下划线*/
+    color: #3c3c3c;/*超链接默认字体颜色*/
+}
+
+i {
+    font-style: normal;/*去掉i标签的斜体样式*/
+}
+
+input, button {
+    margin: 0;
+    padding: 0;
+}
+
+button {
+    outline: none;/*关闭浏览器默认鼠标焦点样式*/
+}
+
+body {
+    /*
+    字体大小/行高 字体
+    字体unicode编码'\5b8b\4f53'， 宋体
+    */
+    font: 12px/1.5 tahoma,arial,'Hiragino Sans GB','\5b8b\4f53',sans-serif;
+    /*字体颜色*/
+    color: #3c3c3c;
+    /*背景色*/
+    background-color: #f4f4f4;
+}
+
+
+/*预定义样式*/
+/*清除浮动*/
+.clearfix:after {
+    content: "";
+    display: block;
+    clear: both;
+}
+/*左右浮动*/
+.fl {
+    float: left;
+}
+.fr {
+    float: right;
+}
+
+/*将元素居中*/
+.leayer{
+    width: 1190px;
+    margin: 0 auto;
+}
+
+.c4 {
+    color: #f40;
+}
+.c5 {
+    color: #f50;
+}
+.mt10{
+    margin-top: 10px;
+}
+.mr10{
+    margin-right: 10px;
+}
