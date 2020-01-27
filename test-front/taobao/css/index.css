@@ -1,2 +1,73 @@
 
 @import "reset.css";
+
+/*通过自定义字体来定义图标*/
+@font-face {
+    font-family: 'iconfont';
+    /*使用src属性引入字体文件，客户端访问时会下载到客户端本地。
+    * 多个文件是为了兼容跟多的浏览器。
+    *  woff为网页开发的字体，尺寸小，加载快。
+    *  eot为ie私有格式。
+    *  ttf是windows和mac的系统字体，比较大，加载慢，ie9+支持。
+    *  svg是一种图形技术，可以画任意形状图形，但不是图片，可以修改大小颜色，放大后不失帧，ie9+支持。
+    * format参数可选，用于标记字体格式，方便浏览器选择是否加载对应字体。标记字体，浏览器就可以选择不加载不支持的字体了。
+    */
+    src: url('../font/iconfont.eot');
+    src: url('../font/iconfont.eot?#iefix') format('embedded-opentype'),
+    url('../font/iconfont.woff2') format('woff2'),
+    url('../font/iconfont.woff') format('woff'),
+    url('../font/iconfont.ttf') format('truetype'),
+    url('../font/iconfont.svg#iconfont') format('svg');
+}
+
+/*定义iconfont的样式*/
+.iconfont {
+    font-family: "iconfont" !important;
+    font-size: 16px;
+    font-style: normal;
+    -webkit-font-smoothing: antialiased;/*字体抗锯齿渲染，针对webkit引擎，非标准样式*/
+    -moz-osx-font-smoothing: grayscale;/*字体抗锯齿渲染，针对moz-osx引擎，非标准样式*/
+}
+
+/*头部信息样式*/
+#headMsg li {
+    float: left;
+    line-height: 35px;
+    padding: 0 6px;
+    /*避免li下的行级子标签换行后有空格，例如span标签。
+    子标签需要重新设置字体大小，容器间空格自己控制，不适用默认的分隔方式，默认分隔方式受字体大小影响*/
+    font-size: 0;
+}
+
+#headMsg a{
+    color: #6c6c6c;
+    font-size: 12px;/*父级标签li为了避免行级标签换行后有空格，将字体大小设置为0。这里子标签显示字符时重新设置字体大小*/
+}
+#headMsg a.login{
+    color: #f22e00;
+}
+#headMsg span {
+    font-size: 12px;
+}
+/*箭头与文件间距离7px*/
+#headMsg span.arrow {
+    margin-left: 7px;
+}
+/*设置购物车数量字体大小和颜色*/
+#headMsg li strong {
+    font-size: 12px;
+    color: #f22e00;
+}
+
+#headMsg li a:hover {
+    color: #f49;
+}
+#headMsg li.line {
+    font-size: 12px;
+    color: #ddd;
+    padding: 0 5px;
+}
+
+
+
+
