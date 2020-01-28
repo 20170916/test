@@ -70,4 +70,47 @@
 
 
 
+/*头部广告*/
+#headAd{
+    background-color: #f12f04;
+}
+#headAd .go {
+    display: block;
+    padding: 10px 10px 10px 15px;
+}
+#headAd .go img {
+    width: 80px;
+    height: 80px;
+}
+
+#headAd ul {
+    padding-top: 13px;
+}
+#headAd li {
+    float: left;
+    width: 209px;
+    height: 75px;
+    margin-right: 10px;
+    padding: 12px 15px 0 15px;
+    box-sizing: border-box; /*使用ie盒模型，避免计算宽高*/
+}
+#headAd li h3 {
+    font-size: 20px;
+    line-height: 28px;
+}
+#headAd li p {
+    font-size: 14px;
+    line-height: 20px;
+}
+#headAd li a {
+    color: #fff;
+    display: block;/*增大a标签的触发面积*/
+}
+#headAd li a img{
+    width: 52px;
+    height: 52px;
+    border-radius: 5px;
+}
+
+
 
