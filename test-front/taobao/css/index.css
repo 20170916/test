@@ -293,6 +293,7 @@
 }
 #nav ul li.line {
     margin: 0;
+    padding: 0;
 }
 #nav ul li a:hover:before {
     content: '';
@@ -304,6 +305,60 @@
     top: -13px;
     left: 50%;
     margin-left: -12px;
+}
+
+
+
+/*首屏内容*/
+.firstScreenLeft {
+    width: 890px;
+}
+/*侧边导航*/
+.firstScreenLeft .sideNav {
+    width: 190px;
+    height: 522px;
+    background: #fff;
+    border: 1px solid #ff5000;
+    box-sizing: border-box;
+    border-top: none;
+}
+.firstScreenLeft .sideNav li {
+    height: 32px;
+    line-height: 32px;
+    padding-left: 25px;
+}
+.firstScreenLeft .sideNav li a {
+    font-size: 14px;
+}
+.firstScreenLeft .sideNav li span {
+    font-size: 12px;
+    colore: #999;
+}
+/*图片1容器*/
+.img1Box {
+    width: 690px;
+    height: 282px;
+    background: #eee;
+}
+/*图片2容器*/
+.img2Box {
+    width: 690px;
+    height: 230px;
+    background: #ccc;
+    margin-top: 10px;
+}
+/*淘宝头条*/
+.news {
+    width: 890px;
+    height: 100px;
+    background: #999;
+}
+
+/*右边内容*/
+.firstScreenRight {
+    width: 290px;
+    height: 621px;
+    background: #9c9c9c;
 }
 
 
