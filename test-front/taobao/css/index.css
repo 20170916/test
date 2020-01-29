@@ -321,18 +321,32 @@
     border: 1px solid #ff5000;
     box-sizing: border-box;
     border-top: none;
+    padding-top: 5px;
 }
 .firstScreenLeft .sideNav li {
     height: 32px;
     line-height: 32px;
     padding-left: 25px;
+    transition: background-color 0.3s;/*css3过度属性*/
 }
+
 .firstScreenLeft .sideNav li a {
     font-size: 14px;
 }
 .firstScreenLeft .sideNav li span {
     font-size: 12px;
-    colore: #999;
+    color: #999;
+    margin-right: 5px;
+}
+.firstScreenLeft .sideNav li:hover {
+    background: #ffe4dc;
+    color: #f50;
+}
+.firstScreenLeft .sideNav li:hover a {
+    color: #f50;
+}
+.firstScreenLeft .sideNav a:hover {
+    text-decoration: underline;
 }
 /*图片1容器*/
 .img1Box {
