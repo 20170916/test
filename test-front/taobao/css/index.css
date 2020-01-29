@@ -488,10 +488,65 @@
 
 
 /*淘宝头条*/
-.news {
+.firstScreenLeft .news {
     width: 890px;
     height: 100px;
-    background: #999;
+    background: #fff;
+    margin-top: 10px;
+    box-sizing: border-box;
+    padding: 13px 13px 13px 20px;
+}
+.firstScreenLeft .news .hd {
+    margin-top: 15px;
+}
+.firstScreenLeft .news .hd h3 {
+    width: 129px;
+    height: 26px;
+    background: url(../image/news_logo.png) no-repeat;
+    text-indent: -9999px;
+    overflow: hidden;
+}
+.firstScreenLeft .news .hd p {
+    color: #999;
+    line-height: 24px;
+}
+.firstScreenLeft .news .newList {
+    width: 680px;
+    position: relative;
+}
+.firstScreenLeft .news .newList .img {
+    margin-right: 15px;
+}
+/*图片是从cdn服务器下载的，宽高可能被改变，所以这里约束一下是好习惯*/
+.firstScreenLeft .news .newList .img img {
+    width: 130px;
+    height: 73px;
+}
+.firstScreenLeft .news .newList h4 {
+    line-height: 28px;
+    font-size: 16px;
+    font-weight: normal;
+}
+.firstScreenLeft .news .newList h4 a {
+    color: #333;
+}
+.firstScreenLeft .news .newList h4 a:hover,
+.firstScreenLeft .news .newList .more:hover {
+    color: #ff5000;
+}
+
+.firstScreenLeft .news .newList p {
+    line-height: 18px;
+    font-size: 14px;
+}
+.firstScreenLeft .news .newList p a {
+    color: #999;
+}
+.firstScreenLeft .news .newList .more {
+    position: absolute;
+    top: 0;
+    right: 0;
+    color: #999;
 }
 
 /*右边内容*/
