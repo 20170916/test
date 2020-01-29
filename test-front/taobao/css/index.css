@@ -349,11 +349,74 @@
     text-decoration: underline;
 }
 /*图片1容器*/
-.img1Box {
+.firstScreenLeft .img1Box {
     width: 690px;
     height: 282px;
-    background: #eee;
+    margin-top: 10px;
 }
+.firstScreenLeft .pic {
+    width: 520px;
+    position: relative;
+}
+.firstScreenLeft .pic button{
+    width: 20px;
+    height: 30px;
+    line-height: 30px;
+    color: #fff;
+    cursor: pointer;
+    border: none;
+    background-color: rgba(0, 0, 0, 0.3);/*可以同时设置到透明度，css3属性，ie9+支持*/
+    position: absolute;
+    top: 50%;
+    margin-top: -15px;
+    display: none;
+}
+.firstScreenLeft .pic:hover button {
+    display: block;
+}
+.firstScreenLeft .pic button.leftBtn{
+    left: 0;
+    border-radius: 0 15px 15px 0;
+}
+.firstScreenLeft .pic button.rightBtn{
+    right: 0;
+    border-radius: 15px 0 0 15px;
+}
+.firstScreenLeft .pic .circle{
+    position: absolute;
+    bottom: 15px;
+    left: 50%;
+    margin-left: -35px;
+    border-radius: 10px;
+    padding: 3px 0;
+    font-size: 0;
+
+    background-color: rgba(255, 255, 255, 0.3);
+}
+.firstScreenLeft .pic .circle span{
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: #fff;
+    margin: 0 3px;
+    cursor: pointer;
+}
+.firstScreenLeft .pic .circle span.active{
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: #ff5000;
+}
+.firstScreenLeft .ad{
+    width: 160px;
+}
+.firstScreenLeft .ad img{
+    width: 160px;
+}
+
+
 /*图片2容器*/
 .img2Box {
     width: 690px;
