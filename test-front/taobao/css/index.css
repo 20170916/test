@@ -327,11 +327,14 @@
     height: 32px;
     line-height: 32px;
     padding-left: 25px;
+    color: #999;
+    font-size: 14px;
     transition: background-color 0.3s;/*css3过度属性*/
 }
 
 .firstScreenLeft .sideNav li a {
     font-size: 14px;
+    color: #666;
 }
 .firstScreenLeft .sideNav li span {
     font-size: 12px;
@@ -365,7 +368,11 @@
     color: #fff;
     cursor: pointer;
     border: none;
-    background-color: rgba(0, 0, 0, 0.3);/*可以同时设置到透明度，css3属性，ie9+支持*/
+    background-color: rgba(0, 0, 0, 0.3);/*可以同时设置到透明度，css3属性，ie9+支持。ie8下是纯白的背景*/
+
+    background-color: #000\9; /*针对ie9以下浏览器*/
+    filter: alpha(opacity=30);/*ie9以下浏览器设置透明度*/
+
     position: absolute;
     top: 50%;
     margin-top: -15px;
@@ -412,18 +419,74 @@
 .firstScreenLeft .ad{
     width: 160px;
 }
-.firstScreenLeft .ad img{
+.firstScreenLeft .ad img {
     width: 160px;
 }
 
 
 /*图片2容器*/
-.img2Box {
+.firstScreenLeft .img2Box {
     width: 690px;
-    height: 230px;
-    background: #ccc;
+    height: 220px;
     margin-top: 10px;
 }
+.firstScreenLeft .img2Box .picTitle {
+    height: 20px;
+}
+.firstScreenLeft .img2Box .picTitle .text {
+    height: 17px;
+    line-height: 17px;
+}
+.firstScreenLeft .img2Box .picTitle .text .bg {
+    background: url(../image/title_bg.png) no-repeat left;
+    padding-left: 136px;
+    color: #666;
+    width: 136px;
+    position: absolute;
+    height: 19px;
+    background-repeat: no-repeat;
+    background-position: 2px 0;
+    background-size: 122px 22px;
+}
+.firstScreenLeft .img2Box .picTitle .text i {
+    color: #ff1648;
+}
+.firstScreenLeft .img2Box .picTitle .line {
+    height: 3px;
+    background-color: #ff1648;
+    position: relative;
+}
+.firstScreenLeft .img2Box .picTitle .line span {
+    width: 87px;
+    height: 3px;
+    background-color: #000;
+    position: absolute;
+    left: 0;
+}
+.firstScreenLeft .img2Box .img {
+    width: 520px;
+    height: 200px;
+    background: #fff;
+    position: relative;
+    /*图片垂直居中*/
+    display: table-cell;/*单元格样式默认垂直居中*/
+    vertical-align: middle;
+    /*css3 弹性盒模型 图片水平垂直居中，支持ie10+ */
+    /*display: flex;
+    justify-content: space-around;
+    align-items: center;*/
+}
+.firstScreenLeft .img2Box .img img {
+    width: 250px;
+    height: 155px;
+    margin: 0 1px;
+}
+.firstScreenLeft .img2Box .ad .title {
+    height: 20px;
+    line-height: 20px;
+}
+
+
 /*淘宝头条*/
 .news {
     width: 890px;
