@@ -251,3 +251,59 @@
 }
 
 
+/*导航*/
+#nav h2 {
+    width: 190px;
+    height: 30px;
+    line-height: 30px;
+    font-size: 16px;
+    color: #fff;
+    text-align: center;
+    background-color: #f50;
+}
+
+#nav ul {
+    margin-left: 190px;
+    height: 30px;
+    /*width: 1000px;
+    width: calc(100% - 190px);!*使用计算函数计算宽度，支持ie9+,不支持时使用上面width直接赋值的样式 *!
+    */
+    /*渐变背景颜色*/
+    background-image: linear-gradient(to right, #ff9000, #ff5000);
+    /*兼容ie8的渐变背景颜色*/
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffff9000',
+    endColorstr='#ffff5000', GradientType=1);
+
+}
+#nav ul li {
+    float: left;
+    line-height: 30px;
+    margin: 0 7px;
+    font-size: 14px;
+    color: #fff;
+    padding: 0 5px;
+    position: relative;
+}
+#nav ul li.size {
+    font-size: 16px;
+}
+#nav ul li a {
+    color: #fff;
+    font-weight: bold;
+}
+#nav ul li.line {
+    margin: 0;
+}
+#nav ul li a:hover:before {
+    content: '';
+    position: absolute;
+    width: 23px;
+    height: 13px;
+    background-image: url("../image/ico_02.gif");
+
+    top: -13px;
+    left: 50%;
+    margin-left: -12px;
+}
+
+
