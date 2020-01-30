@@ -793,4 +793,112 @@
 }
 
 
+/*有好货与爱逛街*/
+/*有好货*/
+.goods {
+    width: 590px;
+    height: 658px;
+    background-color: #fff;
+}
+.goods .head {
+    height: 24px;
+    line-height: 24px;
+    margin: 20px 0;
+    padding: 0 20px;
+}
+.goods .head h3 {
+    font-size: 0;
+    font-weight: normal;
+}
+.goods .head h3 img {
+    height: 24px;
+}
+.goods .head h3 span {
+    vertical-align: middle;
+    color: #ccc;
+    font-size: 20px;
+    margin: 0 5px;
+}
+.goods .head h3 i {
+    font-size: 12px;
+    vertical-align: middle;
+    color: #999;
+}
+.goods .head .change {
+    color: #999;
+}
+
+.goods .list {
+    font-size: 0;
+    text-align: center;
+}
+
+.goods .list li {
+    width: 180px;
+    display: inline-block;
+    margin: 0 2px 35px 2px;
+    text-align: left;
+}
+.goods .list li img {
+    width: 180px;
+    height: 180px;
+}
+.goods .list li h4 {
+    font-size: 16px;
+    height: 28px;
+    line-height: 28px;
+    font-weight: normal;
+}
+.goods .list li h4 a:hover {
+    color: #f40;
+}
+.goods .list li .text {
+    height: 24px;
+    line-height: 24px;
+    font-size: 14px;
+    overflow: hidden;
+}
+.goods .list li .text a {
+    color: #999;
+}
+.goods .list li .comment {
+    display: block;
+    height: 22px;
+    line-height: 22px;
+    font-size: 12px;
+    color: #35b1ff;
+    margin-top: 12px;
+}
+.goods .list li .comment span {
+    font-size: 14px;
+    margin-right: 4px;
+}
+
+/*爱逛街*/
+.shopping .list li .text {
+    height: 44px;
+    line-height: 22px;
+    font-size: 14px;
+    overflow: hidden;
+    margin-top: 11px;
+}
+.shopping .list li .text span {
+    font-size: 14px;
+    color: #ebebeb;
+    position: relative;
+    top: -5px;
+}
+.shopping .list li .text a:hover {
+    color: #f40;
+}
+.shopping .list li .comment {
+    colore: #999;
+}
+.shopping .list li .comment img{
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+}
+
+
 
