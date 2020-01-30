@@ -684,3 +684,77 @@
 }
 
 
+/*图标区域*/
+.firstScreenRight .icon {
+    width: 100%;
+    height: 231px;
+    background-color: #fff;
+    table-layout: fixed; /*定义列宽的算法，根据表格宽度自动计算列宽，每列宽度为均分表格的宽度*/
+}
+/*定义单元格*/
+.firstScreenRight .icon td {
+    border: 1px solid #f4f4f4;
+    text-align: center;
+}
+.firstScreenRight .icon td span {
+    display: block;
+    width: 24px;
+    height: 24px;
+    margin: 0 auto;
+    background: url("../image/icon.png") no-repeat;
+}
+.firstScreenRight .icon td i {
+    line-height: 34px;
+    color: #333;
+}
+/*设置背景图片位置*/
+.firstScreenRight .icon .item1 span {
+    background-position: 0 0;
+    background-size: 24px 597px;
+}
+.firstScreenRight .icon .item2 span {
+    background-position: 0 -87px;
+    background-size: 24px 597px;
+}
+.firstScreenRight .icon .item3 span {
+    background-position: 0 -44px;
+    background-size: 24px 597px;
+}
+.firstScreenRight .icon .item4 span {
+    background-position: 0 -132px;
+    background-size: 24px 597px;
+}
+.firstScreenRight .icon .item5 span {
+    background-position: 0 -176px;
+    background-size: 24px 597px;
+}
+.firstScreenRight .icon .item6 span {
+    background-position: 0 -220px;
+    background-size: 24px 597px;
+}
+.firstScreenRight .icon .item7 span {
+    background-position: 0 -264px;
+    background-size: 24px 597px;
+}
+.firstScreenRight .icon .item8 span {
+    background-position: 0 -308px;
+    background-size: 24px 597px;
+}
+.firstScreenRight .icon .item9 span {
+    background-position: 0 -352px;
+    background-size: 24px 597px;
+}
+.firstScreenRight .icon .item10 span {
+    background-position: 0 -396px;
+    background-size: 24px 597px;
+}
+.firstScreenRight .icon .item11 span {
+    background-position: 0 -440px;
+    background-size: 24px 597px;
+}
+.firstScreenRight .icon .item12 span {
+    background-position: 0 -484px;
+    background-size: 24px 597px;
+}
+
+

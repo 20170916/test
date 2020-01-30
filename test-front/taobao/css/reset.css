@@ -67,7 +67,7 @@ body {
 }
 
 /*将元素居中*/
-.layer{
+.layer {
     width: 1190px;
     margin: 0 auto;
 }
@@ -88,6 +88,13 @@ body {
 .mr7 {
     margin-right: 7px;
 }
-.mr10{
+.mr10 {
     margin-right: 10px;
+}
+
+table {
+    border-collapse: collapse;/*边框模式使用合并模式，两个相邻边框使用一个边框*/
+}
+th, td {
+    padding: 0;
 }
