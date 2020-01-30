@@ -640,4 +640,47 @@
 
 }
 
+/*公告区*/
+.firstScreenRight .notice {
+    height: 108px;
+    background-color: #fff;
+}
+.firstScreenRight .notice .title {
+    text-align: center;
+    font-size: 0;
+    padding-top: 10px;
+}
+.firstScreenRight .notice .title li {
+    display: inline-block;
+    font-size: 12px;
+    line-height: 20px;
+    padding: 0 4px;
+    margin: 0 10px;
+}
+.firstScreenRight .notice .title li .active {
+    font-weight: bold;
+    border-bottom: 2px solid #f40 ;
+}
+.firstScreenRight .notice .title li a:hover {
+    color: #f40 ;
+}
+.firstScreenRight .notice .content {
+    margin: 0 12px;
+    padding-top: 10px;
+}
+.firstScreenRight .notice .content li {
+    height: 25px;
+    line-height: 25px;
+    overflow: hidden;
+    float: left;
+    width: 130px;
+}
+.firstScreenRight .notice .content li a:hover,
+.firstScreenRight .notice .content li.item1 a {
+    color: #ff5000;
+}
+.firstScreenRight .notice .content li.item1 {
+    width: 100%;
+}
+
 
