@@ -758,3 +758,39 @@
 }
 
 
+/*app*/
+.firstScreenRight .app {
+    height: 111px;
+    background: #fff;
+}
+.firstScreenRight .app .title {
+    height: 30px;
+    line-height: 30px;
+}
+.firstScreenRight .app h3 {
+    font-size: 14px;
+    padding-left: 14px;
+}
+.firstScreenRight .app a {
+    margin-right: 10px;
+}
+.firstScreenRight .app a:hover {
+    color: #f40;
+}
+.firstScreenRight .app .appIcon {
+    text-align: center;
+    font-size: 0;
+}
+.firstScreenRight .app .appIcon li {
+    width: 32px;
+    height: 32px;
+    display: inline-block;
+    margin: 0 10px 8px 10px;
+}
+.firstScreenRight .app .appIcon li img {
+    width: 32px;
+    height: 32px;
+}
+
+
+
