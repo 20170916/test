@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../vue.js" type="text/javascript" charset="utf-8"></script>
+</head>
+<body>
+<div id="app">
+    {{a}} -- {{b}}
+</div>
+
+<script type="text/javascript">
+    var data ={
+        a: 1
+    }
+    var app = new Vue({
+        el: "#app",
+        data: data
+    });
+    /*除了数据属性，vue还暴露了有用的实例属性和方法，这些属性和方法都有前缀$，以便与自定义的属性区分。
+    * */
+    console.info(app.$data == data) // 输出true
+    console.info(app.$el == document.getElementById('app'))  //输出true
+    //观察a变量变化先后的值
+    app.$watch('a', function(newVal, oldVal){
+        console.log(newVal, oldVal)
+    })
+    app.a = 2
+    data.a = 3
+
+</script>
+
+</body>
+</html>
