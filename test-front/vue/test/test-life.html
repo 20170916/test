@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../vue.js" type="text/javascript" charset="utf-8"></script>
+</head>
+<body>
+<div id="app">
+    {{a}} -- {{b}}
+</div>
+
+<script type="text/javascript">
+    /**
+     * vue对象在创建时会经历一系列初始化过程，需要设置数据监听，编译模板，将实例挂在到dom上，并在数据变化时更新dom等。
+     * 这个过程中也会运行一些生命周期钩子的函数，给用户在不同阶段添加自己代码的机会。
+     * 生命周期函数最好不要使用=>函数，因为钩子函数中是会被频繁应用this的，而=>函数中不能使用this。
+     *
+     * 参考地址：https://learning.dcloud.io/#/?vid=4
+     */
+    var data ={
+        a: 1
+    }
+    var app = new Vue({
+        data: data,
+        el: "#app",
+        // 在实例初始化之后，数据观测(data observer)和event/watcher 事件配置之前被调用
+        beforeCreate: function () {
+            console.info('beforeCreate')
+        },
+        created: function () {
+            console.info('created')
+        },
+        beforeMount: function () {
+            console.info('beforeMount')
+        },
+        mounted: function () {
+            console.info('mounted')
+        },
+        beforeUpdate: function () {
+            console.info('beforeUpdate')
+        },
+        updated: function () {
+            console.info('updated')
+        }
+
+
+    });
+
+    // 3s后修改a的值
+    setTimeout(function () {
+        app.a='chage'
+    }, 3000)
+
+
+</script>
+
+</body>
+</html>
