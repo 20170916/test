@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title></title>
+<script src="vue.js" type="text/javascript" charset="utf-8"></script>
+</head>
+<body>
+<!--条件渲染
+v-if:条件不满足，不渲染html；有更高的切换开销，适合不频繁切换的组件 
+v-show:条件不满足，会渲染html，通过css进行隐藏；有更高的初始化开销，适合频繁切换的组件
+-->
+<div id="app">
+	<div v-if="type === 'A'">
+	  A
+	</div>
+	<div v-else-if="type === 'B'">
+	  B
+	</div>
+	<div v-else-if="type === 'C'">
+	  C
+	</div>
+	<div v-else>
+	  Not A/B/C
+	</div>
+	<h1 v-show="ok">Hello!</h1>
+</div>
+<script type="text/javascript">
+var vm = new Vue({
+	el : "#app",
+	data : {
+		type : "B",
+		ok : false
+	}
+});
+</script>
+<style type="text/css">
+
+</style>
+</body>
+</html>
