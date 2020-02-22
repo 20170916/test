@@ -24,7 +24,7 @@ Vue.component('button-counter', {
 		}
 	},
 	// 组件的模板必须有一个根节点；
-	// 在模板内可以使用slot标签声明一个组件的插槽，通过插槽可以插入任意的html内容和标签 
+	// 在模板内可以使用slot标签声明一个组件的插槽，通过插槽可以插入任意的html内容和标签
 	template: '<div><h1>hi...</h1><button v-on:click="clickfun">{{title}} You clicked me {{ count }} times.</button><slot></slot></div>',
 	methods:{
 		// 事件函数

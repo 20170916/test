@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title></title>
+<script src="vue.js" type="text/javascript" charset="utf-8"></script>
+</head>
+<body>
+<!--
+组件注册：
+全局注册：
+  通过Vue.component函数创建的组件是全局注册的，可在任何新创建Vue根实例（new Vue）的模板中进行应用。
+局部注册：
+  通过创建Vue实例时的components属性进行组件的局部注册。
+-->
+<div id="app">
+	<button-counter></button-counter>
+	<test></test>
+</div>
+<script type="text/javascript">
+Vue.component('button-counter', {
+	props: ['title'],
+	data: function () {
+		return {}
+	},
+	template: '<div><h1>hi...</h1></div>',
+	methods:{
+		
+	}
+})
+var vm = new Vue({
+	el : "#app",
+	data : {
+		
+	},
+	methods:{
+		clicknow : function (e) {
+			console.log(e);
+		}
+	},
+	components:{
+		test : {
+			template:"<h2>h2...</h2>"
+		}
+	}
+});
+</script>
+<style type="text/css">
+
+</style>
+</body>
+</html>
