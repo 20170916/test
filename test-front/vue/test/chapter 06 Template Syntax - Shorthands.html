@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns:v-bind="http://www.w3.org/1999/xhtml">
+<head>
+<meta charset="utf-8">
+<title></title>
+<script src="../vue.js" type="text/javascript" charset="utf-8"></script>
+</head>
+<body>
+<!--
+指令，带有v-前缀的特殊特性，指令值是单个js表达式（v-for是例外）
+指令的职责是当表达式的值改变时，将其产生的联代影响作用在dom上。
+-->
+<div id="app">
+	<!--v-if指令，seen属性取值为true会渲染p标签，取值为false不渲染-->
+	<p v-if="seen">现在你看到我了</p>
+	<!--v-bind指令，绑定属性，例如为a标签的href属性绑定url地址-->
+	<a v-bind:href="url">...</a>
+	<!--默认先执行内部的click2函数，再执行外部的click1函数。内部的时间使用.stop可停止向外传递点击事件。 -->
+	<div @click="click1">
+		<div @click.stop="click2">
+			click me
+		</div>
+	</div>
+</div>
+<script type="text/javascript">
+var vm = new Vue({
+	el : "#app",
+	data : {
+		seen : false,
+		url : "https://cn.vuejs.org/v2/guide/syntax.html#%E6%8C%87%E4%BB%A4"
+	},
+	methods:{
+		click1 : function () {
+			console.log('click1......');
+		},
+		click2 : function () {
+			console.log('click2......');
+		}
+	}
+});
+</script>
+<style type="text/css">
+
+</style>
+</body>
+</html>
