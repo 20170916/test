@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../vue.js" type="text/javascript" charset="utf-8"></script>
+</head>
+<body>
+    <div id="app">
+        {{a}} -- {{b}}
+    </div>
+
+    <script type="text/javascript">
+        var data ={
+            a: 1
+        }
+        var app = new Vue({
+            el: "#app",
+            data: data
+        });
+        /*vue 对象对应的值要想生效，可使用vue对象直接点data的属性值，也可data点属性值*/
+        data.a = 2 //生效
+        app.a=3 // 生效
+        app.data.a=4  //不生效
+        /*若想使用vue的响应式特性，在vue对象的data属性中必须声明要用的属性值，否则后注册的属性值并不会生效*/
+        data.b = 1 // b不生效
+
+    </script>
+
+</body>
+</html>
