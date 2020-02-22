@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title></title>
+<script src="vue.js" type="text/javascript" charset="utf-8"></script>
+</head>
+<body>
+<!--
+列表渲染
+v-for渲染列表元素时，默认使用就地更新策略，如果后面数据的顺序被改变，vue将不会更新dom元素。
+若希望列表与数据顺序同步更新， 需要为每一项提供一个key属性，:key等同于v-bin:key
+-->
+<div id="app">
+	<ul>
+		<li v-for="item,index in items" :key="index">
+		{{index}}{{ item.message }}
+		</li>
+	</ul>
+	<ul>
+		<li v-for="value, key in object">
+			{{key}} : {{ value }}
+		</li>
+	</ul>
+</div>
+<script type="text/javascript">
+var vm = new Vue({
+	el : "#app",
+	data : {
+		items : [
+			{ message: 'Foo' },
+			{ message: 'Bar' }
+		],
+		object: {
+			title: 'How to do lists in Vue',
+			author: 'Jane Doe',
+			publishedAt: '2016-04-10'
+		}
+	}
+});
+</script>
+</body>
+</html>
