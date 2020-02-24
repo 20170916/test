@@ -1,1 +1,1 @@
-<view><view class="_h1">{{"新闻标题:"+title}}</view><view class="_div">{{"新闻内容:"+content}}</view></view>
+<view><view data-event-opts="{{[['tap',[['tap1',['$event']]]]]}}" bindtap="__e" class="_h1">{{"新闻标题:"+title}}</view><view class="_div">{{"新闻内容:"+content}}</view></view>

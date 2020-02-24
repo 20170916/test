@@ -121,6 +121,8 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 //
 //
 //
+//
+//
 var _default =
 {
   // 声明组件属性
@@ -138,7 +140,15 @@ var _default =
     return {};
 
 
-  } };exports.default = _default;
+  },
+  methods: {
+    // 声明组件对应事件的函数 
+    tap1: function tap1() {
+      console.log(1);
+      // 使用emit函数将组件的时间传递给调用者，第一个参数是事件名称，第二个参数是事件携带的变量 
+      // 在父级组件上使用@事件名称的方式，监听子组件的tap1事件
+      this.$emit('tap1', this.title);
+    } } };exports.default = _default;
 
 /***/ })
 

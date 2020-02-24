@@ -171,6 +171,8 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 
 
+
+
 {
   data: function data() {
     return {
@@ -180,8 +182,11 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
   onLoad: function onLoad() {
 
   },
-  methods: {},
-
+  methods: {
+    //声明事件函数
+    tap: function tap(e) {
+      console.log(e);
+    } },
 
   components: {
     ypNumberBox: ypNumberBox,

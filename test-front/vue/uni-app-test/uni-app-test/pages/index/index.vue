@@ -18,7 +18,9 @@
 		<yp-number-box @change="change" :index="index" />
 		
 		<!-- 使用自定义组件 -->
-		<mycomponent title="title" content="content ..."></mycomponent>
+		<mycomponent title="title" content="content ..." @tap1='tap'></mycomponent>
+		
+		
 	</view>
 	
 </template>
@@ -37,7 +39,10 @@
 
 		},
 		methods: {
-
+			//声明事件函数
+			tap : function(e){
+				console.log(e)
+			}
 		},
 		components: {
 			ypNumberBox,
