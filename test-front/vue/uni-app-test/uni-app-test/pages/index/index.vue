@@ -4,7 +4,11 @@
 		<view class="text-area">
 			<text class="title">{{title}}</text>
 		</view>
+		<div class='box'>
+			hi ...
+		</div>
 	</view>
+	
 </template>
 
 <script>
@@ -23,7 +27,7 @@
 	}
 </script>
 
-<style>
+<style lang="less">
 	.content {
 		display: flex;
 		flex-direction: column;
@@ -49,4 +53,5 @@
 		font-size: 36rpx;
 		color: #8f8f94;
 	}
+@import '../../less.less';
 </style>
