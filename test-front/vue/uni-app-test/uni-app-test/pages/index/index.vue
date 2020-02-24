@@ -7,11 +7,22 @@
 		<div class='box'>
 			hi ...
 		</div>
+		<!-- switch组件 -->
+		<view>
+			<switch checked="true" @change=""></switch>
+		</view>
+		<!-- 使用数字输入框组件 -->
+		<yp-number-box></yp-number-box>
+		<yp-number-box :min="0" :max="9"></yp-number-box>
+		<yp-number-box @change="bindChange"></yp-number-box>
+		<yp-number-box @change="change" :index="index" />
 	</view>
 	
 </template>
 
 <script>
+	import ypNumberBox from "@/components/yp-number-box/yp-number-box.vue"
+	
 	export default {
 		data() {
 			return {
@@ -23,7 +34,8 @@
 		},
 		methods: {
 
-		}
+		},
+		components: {ypNumberBox}
 	}
 </script>
 

@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "uni-app",
+  "usingComponents": {
+    "yp-number-box": "/components/yp-number-box/yp-number-box"
+  }
+}
