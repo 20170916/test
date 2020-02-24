@@ -16,12 +16,16 @@
 		<yp-number-box :min="0" :max="9"></yp-number-box>
 		<yp-number-box @change="bindChange"></yp-number-box>
 		<yp-number-box @change="change" :index="index" />
+		
+		<!-- 使用自定义组件 -->
+		<mycomponent title="title" content="content ..."></mycomponent>
 	</view>
 	
 </template>
 
 <script>
 	import ypNumberBox from "@/components/yp-number-box/yp-number-box.vue"
+	import mycomponent from "@/components/my-component.vue"
 	
 	export default {
 		data() {
@@ -35,7 +39,10 @@
 		methods: {
 
 		},
-		components: {ypNumberBox}
+		components: {
+			ypNumberBox,
+			mycomponent
+		}
 	}
 </script>
 

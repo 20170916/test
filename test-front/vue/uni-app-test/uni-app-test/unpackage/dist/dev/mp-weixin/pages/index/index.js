@@ -142,7 +142,11 @@ __webpack_require__.r(__webpack_exports__);
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var ypNumberBox = function ypNumberBox() {return __webpack_require__.e(/*! import() | components/yp-number-box/yp-number-box */ "components/yp-number-box/yp-number-box").then(__webpack_require__.bind(null, /*! @/components/yp-number-box/yp-number-box.vue */ 25));};var _default =
+Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var ypNumberBox = function ypNumberBox() {return __webpack_require__.e(/*! import() | components/yp-number-box/yp-number-box */ "components/yp-number-box/yp-number-box").then(__webpack_require__.bind(null, /*! @/components/yp-number-box/yp-number-box.vue */ 25));};var mycomponent = function mycomponent() {return __webpack_require__.e(/*! import() | components/my-component */ "components/my-component").then(__webpack_require__.bind(null, /*! @/components/my-component.vue */ 33));};var _default =
+
+
+
+
 
 
 
@@ -179,7 +183,9 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
   methods: {},
 
 
-  components: { ypNumberBox: ypNumberBox } };exports.default = _default;
+  components: {
+    ypNumberBox: ypNumberBox,
+    mycomponent: mycomponent } };exports.default = _default;
 
 /***/ }),
 /* 21 */
