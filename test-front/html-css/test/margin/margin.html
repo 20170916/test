@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body{
+            background-color:#000;
+        }
+        .wrapper{
+            width:200px;
+            height:200px;
+            background-color:red;
+            margin-top:100px;
+        }
+        .box{
+            width:50px;
+            height:50px;
+            background-color:#eee;
+            opacity:0.8;
+            /*margin塌陷：
+            父子嵌套元素在垂直方向的margin,父子元素是结合在一起的,他们两个的margi会取其中最大的值.
+            正常情况下,父级元素应该相对浏览器进行定位,子级相对父级定位.
+            由于margin的塌陷,父级相对浏览器定位.而子级没有相对父级定位,子级相对父级,就像坍塌了一样.
+            */
+            /*margin-top: 100px;*/
+            /*margin合并：
+                同一个bfc内，两个兄弟结构的元素在垂直方向上的margin是合并的。
+                可以通过触发bfc让两个元素不再同一个bfc来解决，但是这会使结构发生很大的改变，一般这时重新计算margin就可以了。
+            */
+        }
+    </style>
+</head>
+<body >
+    <div class="wrapper">
+        <div class="box"></div>
+    </div>
+</body>
+</html>
