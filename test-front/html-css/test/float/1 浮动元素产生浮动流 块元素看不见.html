@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        .box1{
+            float: left;
+            width: 100px;
+            height:100px;
+            background-color: #00FF00;
+            /*margin-left: 150px;*/
+        }
+        .box2{
+            width: 150px;
+            height: 150px;
+            background-color: green;
+            /*vertical-align: bottom;*/
+        }
+    </style>
+</head>
+<body>
+<!--浮动元素会产生浮动流，改元素会脱离流动层
+块级元素看不见浮动元素（分层）
+行内元素，产生bfc的元素及文本能看见浮动元素（不分层）
+-->
+<div>
+    <div class="box1">box1,float:left</div>
+    <div class="box2">box2</div>
+</div>
+</body>
+</html>

@@ -12,6 +12,8 @@
 
 		ul{
 			list-style: none;/**去掉行首标记*/
+			background-color: #9c9c9c;
+			/*overflow: auto;*/
 		}
 		li{
 			margin: 0 10px;
@@ -38,48 +40,33 @@
 			border-radius: 15px;/*圆角矩形*/
 		}
 		/**
-		清除浮动流
+		清除浮动流：
+		产生了浮动的元素会导致块级元素看不见浮动元素（父级的块元素，父级的兄弟块元素都看不见浮动元素），
+		所以为了让浮动元素不影响父元素，也不影响父元素的兄弟元素，就需要在浮动元素结束前加一个块元素清除浮动，来接触对父元素和其他元素的影响。
+		伪元素默认的display是inline。
 		 */
 		ul::after{
 			content:"";
 			display: block;
 			clear:both;
+			background-color: #ff4400;
+		}
+
+		#underSameDiv {
+			background-color: #00FF00;
+			width:50px;
+			height: 50px;
+			display: inline-block;
+		}
+		#underDiffDiv {
+			background-color: #ff4400;
+			width:50px;
+			height: 50px;
 		}
 	</style>
 </head>
 <body>
-	<!-- <ol type="1">
-		<li>验光</li>
-		<li>用户粘性</li>
-		<li>AR</li>
-	</ol>
-	<ol type="a">
-		<li>验光</li>
-		<li>用户粘性</li>
-		<li>AR</li>
-	</ol>
-	<ol type="A">
-		<li>验光</li>
-		<li>用户粘性</li>
-		<li>AR</li>
-	</ol>
-	<ol type="一">
-		<li>验光</li>
-		<li>用户粘性</li>
-		<li>AR</li>
-	</ol>
-
-	<ol type="i">
-		<li>验光</li>
-		<li>用户粘性</li>
-		<li>AR</li>
-	</ol>
-	<ol type="2">
-		<li>验光</li>
-		<li>用户粘性</li>
-		<li>AR</li>
-	</ol> -->
-	
+<div>
 	<ul >
 		<li>
 			<a href="#">淘宝</a>
@@ -91,7 +78,16 @@
 			<a href="#">聚划算</a>
 		</li>
 	</ul>
-	<div>123</div>
+	<div id="underSameDiv">
+		same
+		<!--同一个div下-->
+	</div>
+</div>
+
+	<div id="underDiffDiv">
+		<!--不同div下-->
+		diff
+	</div>
 
 
 </body>
