@@ -14,11 +14,13 @@ public class SingleThreadServer {
             while (true) {
                 System.out.println(1);
                 System.out.println("服务器 正在等待连接...");
+                //阻塞1：等待连接时阻塞
                 Socket socket = serverSocket.accept();
 
                 System.out.println(2);
                 System.out.println("服务器 已接收到连接请求...");
                 System.out.println("服务器 正在等待数据...");
+                //阻塞2：等待数据时阻塞
                 final int read = socket.getInputStream().read(buffer);
                 System.out.println("read:"+read);
 

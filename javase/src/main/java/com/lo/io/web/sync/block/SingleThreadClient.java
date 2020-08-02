@@ -12,8 +12,8 @@ public class SingleThreadClient {
             socket.getOutputStream().write("data from client".getBytes());
 
             byte[] buffer = new byte[1024];
-            final int read = socket.getInputStream().read(buffer);
-            System.out.println(new String(buffer));
+            /*final int read = socket.getInputStream().read(buffer);
+            System.out.println(new String(buffer));*/
 
             socket.close();
         } catch (IOException e) {
