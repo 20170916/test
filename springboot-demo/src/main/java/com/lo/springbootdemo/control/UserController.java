@@ -4,6 +4,7 @@ import com.lo.springbootdemo.entity.User;
 import com.lo.springbootdemo.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -19,5 +20,12 @@ public class UserController {
     public List<User> findAll(){
         List<User> list=userService.findAll();
         return list;
+    }
+
+
+    @GetMapping(value = "/insert")
+    public String insert(){
+        userService.insert();
+        return "123";
     }
 }

@@ -25,7 +25,8 @@ public class NettyServer {
 
         //用于构造服务端套接字ServerSocket对象，标识当服务器请求处理线程全满时，用于临时存放已完成三次握手的请求的队列的最大长度。
         //用来初始化服务端可连接队列
-        //服务端处理客户端连接请求是按顺序处理的，所以同一时间只能处理一个客户端连接，多个客户端来的时候，服务端将不能处理的客户端连接请求放在队列中等待处理，backlog参数指定了队列的大小。
+        //服务端处理客户端连接请求是按顺序处理的，所以同一时间只能处理一个客户端连接
+        //多个客户端来的时候，服务端将不能处理的客户端连接请求放在队列中等待处理，backlog参数指定了队列的大小。
         server.option(ChannelOption.SO_BACKLOG, 128);
 
         //第2步绑定服务端通道
@@ -38,7 +39,8 @@ public class NettyServer {
                 //解码器，接收的数据进行解码，一定要加在SimpleServerHandler 的上面
                 //maxFrameLength表示这一贞最大的大小
                 //delimiter表示分隔符，我们需要先将分割符写入到ByteBuf中，然后当做参数传入；
-                //需要注意的是，netty并没有提供一个DelimiterBasedFrameDecoder对应的编码器实现(笔者没有找到)，因此在发送端需要自行编码添加分隔符，如 \r \n分隔符
+                //需要注意的是，netty并没有提供一个DelimiterBasedFrameDecoder对应的编码器实现(笔者没有找到)，
+                // 因此在发送端需要自行编码添加分隔符，如 \r \n分隔符
                 ch.pipeline().addLast(new DelimiterBasedFrameDecoder(Integer.MAX_VALUE, Delimiters.lineDelimiter()[0]));
                 //把传过来的数据 转换成byteBuf
                 ch.pipeline().addLast(new SimpleServerHandler());

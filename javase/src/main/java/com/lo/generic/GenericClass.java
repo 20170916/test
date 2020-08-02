@@ -3,7 +3,7 @@ package com.lo.generic;
 /**
  * 泛型类：
  * 定义类时，定义泛型；使用类时（例如new 对象），指定泛型的具体参数。
- * 在范型类内部，方法的参数和返回值都可以使用泛型来定义
+ * 在范型类内部，方法的参数和返回值都可以使用泛型来定义。
  */
 public class GenericClass {
     public static class GenericsClassTest<A>{

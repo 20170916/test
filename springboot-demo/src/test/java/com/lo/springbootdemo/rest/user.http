@@ -19,5 +19,10 @@ Content-Type: application/json
   "bodyParam":"test"
 }
 
+### get
+GET {{baseUrl}}/user/insert
+Accept: */*
+Cache-Control: no-cache
+
 ###
 
