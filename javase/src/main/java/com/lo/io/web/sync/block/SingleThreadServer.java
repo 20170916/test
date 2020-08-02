@@ -22,6 +22,7 @@ public class SingleThreadServer {
                 final int read = socket.getInputStream().read(buffer);
                 System.out.println("read:"+read);
 
+                socket.getOutputStream().write("response".getBytes());
 
 
                 System.out.println(3);

@@ -6,7 +6,7 @@ import java.net.Socket;
 public class SingleThreadClient2 {
 
     /**
-     * 阻塞中的server不会响应客户端
+     * 阻塞中的server不会响应客户端的连接.客户端也不会报错。
      * @param args
      */
     public static void main(String[] args) {
