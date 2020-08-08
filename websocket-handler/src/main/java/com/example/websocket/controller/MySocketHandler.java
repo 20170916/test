@@ -21,6 +21,8 @@ public class MySocketHandler extends TextWebSocketHandler {
      */
     @Override
     public void afterConnectionEstablished(WebSocketSession session) throws Exception {
+        log.info("after connection established");
+
         Object token = session.getAttributes().get("token");
         /*if (token != null) {
             // 用户连接成功，放入在线用户缓存
@@ -39,6 +41,8 @@ public class MySocketHandler extends TextWebSocketHandler {
      */
     @Override
     protected void handleTextMessage(WebSocketSession session, TextMessage message) throws Exception {
+        log.info("handle text message");
+
         log.info("this: {}",this);
         // 获得客户端传来的消息
         String payload = message.getPayload();
@@ -57,6 +61,7 @@ public class MySocketHandler extends TextWebSocketHandler {
      */
     @Override
     public void afterConnectionClosed(WebSocketSession session, CloseStatus status) throws Exception {
+        log.info("after connection closed");
         Object token = session.getAttributes().get("token");
         if (token != null) {
             // 用户退出，移除缓存

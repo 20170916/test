@@ -1,8 +1,12 @@
 package com.example.websocket.controller;
 
+import com.example.websocket.util.WebSocketUtil;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.tomcat.websocket.WsRemoteEndpointAsync;
+import org.apache.tomcat.websocket.WsRemoteEndpointImplBase;
 import org.springframework.stereotype.Component;
 import java.io.IOException;
+import java.net.InetSocketAddress;
 import javax.websocket.OnClose;
 import javax.websocket.OnError;
 import javax.websocket.OnMessage;
@@ -39,9 +43,13 @@ public class MyWebSocket {
     //收到消息时执行
     @OnMessage
     public void onMessage(String message, Session session) throws IOException {
+        InetSocketAddress remoteAddress = WebSocketUtil.getRemoteAddress(session);
+        System.out.println("有新连接加入！" + remoteAddress);
         log.info("this {}", this);
+
         log.info("收到用户{}的消息{}",this.userId,message);
         session.getBasicRemote().sendText("收到 "+this.userId+" 的消息 "); //回复用户
+
     }
 
     //连接错误时执行
