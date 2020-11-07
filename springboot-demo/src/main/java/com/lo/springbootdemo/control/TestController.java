@@ -23,6 +23,19 @@ public class TestController {
         Thread.sleep(300);
         return responseBody;
     }
+
+    @RequestMapping(value = "/post/xml", method = RequestMethod.POST)
+    @ResponseBody
+    public Object post(@RequestBody User responseBody) throws InterruptedException {
+        Thread.sleep(300);
+        return responseBody;
+    }
+    @Data
+    private static class User{
+        String id;
+        String name;
+    }
+
     @RequestMapping(value = "/postWithUrlParam", method = RequestMethod.POST)
     @ResponseBody
     public String postWithUrlParam(@RequestParam String param, @RequestBody MyRequestBody responseBody) {

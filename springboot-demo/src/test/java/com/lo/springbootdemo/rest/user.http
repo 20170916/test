@@ -1,7 +1,6 @@
 ### get
 GET {{baseUrl}}/getPort
-Accept: */*
-Cache-Control: no-cache
+
 
 ### post
 POST {{baseUrl}}/post
@@ -11,8 +10,27 @@ Content-Type: application/json
   "bodyParam":"test"
 }
 
+### post xml
+POST {{baseUrl}}/post/xml
+Content-Type: application/xml
+
+<Users>
+<id>449</id>
+<name>aaa</name>
+</Users>
+### post xml
+POST {{baseUrl}}/post/xml
+Content-Type: application/json
+
+{
+  "id":"449",
+  "name": "aa"
+}
+
+
+
 ### postWithUrlParam
-POST {{baseUrl}}/postWithUrlParam?param=url
+POST {{baseUrl}}/postWithUrlParam
 Content-Type: application/json
 
 {
